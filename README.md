@@ -1,73 +1,91 @@
-# LingMate
-AI Language Learning Assistant with Voice Support
+    # LingMate  
+**AI Language Learning Assistant with Voice Support**
 
-## 🧠 Логика проекта
-1. **Цель**:  
-   Имитация «друга-носителя языка», который:
-   - Общается на изучаемом языке.
-   - Дает перевод на родной язык.
-   - Анализирует ошибки и предлагает контент (песни, видео).
+## 🧠 Project Logic
 
-2. **Фичи**:
-   - Голосовая озвучка (XTTS v2).
-   - Масштабируемость в плане языков.
-   - Напоминания как в Duolingo.
-   - Адаптация под уровень (A1-C2).
-   - Обучаемость на учебниках и медиа-контенте.
-   - Поддержка акцентов/диалектов.
+1. **Goal**:  
+   Simulate a “native-speaking friend” who:
+   - Communicates in the target language  
+   - Provides translations in the native language  
+   - Analyzes mistakes and suggests content (songs, videos)
 
-## 📂 Структура кода
-| Файл/Папка          | Описание |
-|----------------------|----------|
-| `convert_audio.py`   | Конвертация формата из .mp3 в .wav. |
-| `requirements.txt`   | Необходимые зависимости. |
-| `core/models.py`     | Модели Pydantic (настройки пользователя, запросы). |
-| `core/voice_handler.py` | Озвучка текста, управление очередью аудио. |
-| `core/history_manager.py` | Сохранение истории чата и настроек (JSON). |
-| `core/config.py`     | Конфиги: промпты, TTS, уровни сложности. |
-| `main.py`            | FastAPI-сервер + интеграция с Gemini. |
-| `start_server.bat`   | Скрипт запуска (Windows). |
+2. **Features**:
+   - Voice synthesis (XTTS v2)  
+   - Scalable across languages  
+   - Duolingo-like reminders  
+   - Level adaptation (A1–C2)  
+   - Learns from textbooks and media content  
+   - Supports accents and dialects  
 
-## 🔧 Как запустить
-1. Установите зависимости:
+---
+
+## 📂 Code Structure
+
+| File/Folder               | Description                                       |
+|---------------------------|---------------------------------------------------|
+| `convert_audio.py`        | Converts audio format from `.mp3` to `.wav`       |
+| `requirements.txt`        | Required dependencies                             |
+| `core/models.py`          | Pydantic models (user settings, requests)         |
+| `core/voice_handler.py`   | Text-to-speech, audio queue handling              |
+| `core/history_manager.py` | Stores chat history and settings (as JSON)        |
+| `core/config.py`          | Configuration: prompts, TTS, difficulty levels    |
+| `main.py`                 | FastAPI server + Gemini integration               |
+| `start_server.bat`        | Startup script for Windows                        |
+
+---
+
+## 🔧 How to Run
+
+1. Install dependencies:
    ```bash
    pip install -r requirements.txt
+   ```
 
-2. .env с ключом Gemini:
+2. Create a `.env` file with your Gemini API key:
    ```ini
-   GEMINI_API_KEY=ключ
+   GEMINI_API_KEY=your_key_here
+   ```
 
-3. Запустите сервер:
+3. Start the server:
    ```bash
    python main.py
-   
-Или через start_server.bat (Windows).
+   ```
 
-## 🌍 Поддерживаемые языки
-  TTS (озвучка): 
-   1. Английский (en)
-   2. Испанский (es)
-   3. Французский (fr)
-   4. Немецкий (de)
-   5. Итальянский (it)
-   6. Португальский (pt)
-   7. Польский (pl)
-   8. Турецкий (tr)
-   9. Русский (ru)
-   10. Нидерландский (nl)
-   11. Чешский (cs)
-   12. Арабский (ar)
-   13. Китайский (упрощенный, zh-ccn)
-   14. Венгерский (hu)
-   15. Корейский (ko)
-   16. Японский (ja)
-   17. Хинди (hi)
+   Or run `start_server.bat` on Windows.
 
-Текст/перевод: Любые (через Gemini).
-Примечание: Если родной язык не поддерживается TTS, используется fallback на русский.
+---
 
-## 📌 Проблемы и TODO
-   - Улучшение промпта для точных переводов.
-   - Добавление поддержки TTS для литовского, урду и др. языков.
-   - Интеграция с YouTube/TikTok API для рекомендаций контента.
-   - Интеграция с учебниками для структурирования обучения и комбинации формального и неформального общения.
+## 🌍 Supported Languages
+
+**TTS (Speech synthesis):**
+1. English (en)  
+2. Spanish (es)  
+3. French (fr)  
+4. German (de)  
+5. Italian (it)  
+6. Portuguese (pt)  
+7. Polish (pl)  
+8. Turkish (tr)  
+9. Russian (ru)  
+10. Dutch (nl)  
+11. Czech (cs)  
+12. Arabic (ar)  
+13. Chinese (Simplified, zh-ccn)  
+14. Hungarian (hu)  
+15. Korean (ko)  
+16. Japanese (ja)  
+17. Hindi (hi)
+
+**Text/Translation**: Any language (via Gemini)  
+**Note**: If the native language is not supported by TTS, it falls back to Russian.
+
+---
+
+## 📌 Known Issues & TODO
+
+- Improve prompts for more accurate translations  
+- Add TTS support for Lithuanian, Urdu, and other languages  
+- Integrate YouTube/TikTok API for content recommendations  
+- Integrate textbooks for structured learning alongside informal conversation
+
+    
