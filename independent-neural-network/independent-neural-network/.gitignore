@@ -1,0 +1,65 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+
+# --- Packaging ---
+build/
+dist/
+.eggs/
+*.egg-info/
+
+# --- Environments ---
+.venv/
+venv/
+.env
+.env.*
+pip-wheel-metadata/
+
+# --- Tool caches ---
+.mypy_cache/
+.pytype/
+.pyre/
+ruff_cache/
+pytest_cache/
+.cache/
+
+# --- Notebooks / IDE ---
+.ipynb_checkpoints/
+*.nb.html
+.vscode/
+.idea/
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+
+# --- Training artifacts (heavy / reproducible) ---
+checkpoints*/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+runs/
+outputs/
+wandb/
+tensorboard/
+events.out.tfevents.*
+logs/
+*.log
+
+# --- Data ---
+data/raw/
+data/interim/
+data/tmp/
+# по умолчанию игнорируем всё processed,
+# оставляем только маленький демо-набор:
+data/processed/*
+!data/processed/lingmate_sample.jsonl
+
+# --- Hugging Face / datasets caches ---
+.huggingface/
+**/.cache/huggingface/
+**/datasets-cache/
+datasets/
